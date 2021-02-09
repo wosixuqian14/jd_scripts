@@ -2,7 +2,7 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 
-name: 摇京豆、全民开红包
+name: 摇京豆
 
 on:
   workflow_dispatch:
@@ -39,9 +39,6 @@ jobs:
       - name: '运行 【摇京豆脚本】'
         run: |
           node jd_club_lottery.js
-      - name: '运行 【全民开红包脚本】'
-        run: |
-          node jd_redPacket.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
