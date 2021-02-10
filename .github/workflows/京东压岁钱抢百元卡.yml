@@ -4,7 +4,7 @@ name: 京东压岁钱抢百元卡
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 11 0,3,7,11 * * *'
+    - cron: '11 0,3,7,11 * * *'
   watch:
     types: started
   repository_dispatch:
