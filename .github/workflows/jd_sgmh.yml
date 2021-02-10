@@ -6,11 +6,11 @@ name: jd_sgmh
 on:
   workflow_dispatch:
   schedule:
-    - cron: '11 17 * * *'
+    - cron: '1 10 * * *'
   watch:
     types: started
   repository_dispatch:
-    types: jd_sgmh
+    types: sgmh
 jobs:
   build:
 
