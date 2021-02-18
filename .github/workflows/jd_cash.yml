@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: danwangshimoluo/JdScripts
+          repository: lxdml/jd_scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -38,7 +38,7 @@ jobs:
           npm install
       - name: '运行 【京东领现金】'
         run: |
-          node jd_cash.js
+          node jd_cash.js # 签到领现金
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}

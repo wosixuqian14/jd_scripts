@@ -7,7 +7,7 @@ name: 东东超市
 on:
   workflow_dispatch:
   schedule:
-    - cron: '40 * * * *'
+    - cron: '0 17,19,21,23,1-15/2 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: danwangshimoluo/JdScripts
+          repository: lxdml/jd_scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -50,4 +50,8 @@ jobs:
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
-          JD_818_SHAREID_NOTIFY: ${{ secrets.JD_818_SHAREID_NOTIFY }}
+          jdSuperMarketUpgrade: ${{ secrets.SUPERMARKET_UPGRADE }}
+          jdBusinessCircleJump: ${{ secrets.BUSINESS_CIRCLE_JUMP }}
+          SUPERMARKET_SHARECODES: ${{ secrets.SUPERMARKET_SHARECODES }}
+          jdSuperMarketLottery: ${{ secrets.SUPERMARKET_LOTTERY }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}

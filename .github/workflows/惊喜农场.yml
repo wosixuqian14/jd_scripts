@@ -5,7 +5,7 @@ name: 惊喜农场
 on:
   workflow_dispatch:
   schedule:
-    - cron: '25 0 * * *'
+    - cron: '0 16,0,8 * * *' # 0 0,8,16 * * *
   watch:
     types: started
   repository_dispatch:
@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: danwangshimoluo/JdScripts
+          repository: lxdml/jd_scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -34,12 +34,13 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【惊喜农场】'
+      - name: '运行 【京喜农场】'
         run: |
           node jd_jxnc.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          UN_SUBSCRIBES: ${{ secrets.UN_SUBSCRIBES }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           BARK_SOUND: ${{ secrets.BARK_SOUND }}
@@ -48,4 +49,7 @@ jobs:
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
-          JD_818_SHAREID_NOTIFY: ${{ secrets.JD_818_SHAREID_NOTIFY }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+          JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
+          JXNC_SHARECODES: ${{ secrets.JXNC_SHARECODES }}
+          JXNC_NOTIFY_LEVEL: ${{ secrets.JXNC_NOTIFY_LEVEL }}

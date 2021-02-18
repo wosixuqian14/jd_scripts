@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: danwangshimoluo/JdScripts
+          repository: lxdml/jd_scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -35,9 +35,10 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【京东取关商品】'
+      - name: '运行 【京东取关商品 & 注销会员卡】'
         run: |
           node jd_unsubscribe.js
+          node jd_unbind.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
@@ -50,3 +51,5 @@ jobs:
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+          UN_BIND_STOP_CARD: ${{ secrets.UN_BIND_STOP_CARD }}

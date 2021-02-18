@@ -10,7 +10,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: crazyjoy
+    types: crazy_joy
 jobs:
   build:
 
@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: danwangshimoluo/JdScripts
+          repository: lxdml/jd_scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -49,5 +49,5 @@ jobs:
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
-          DDFACTORY_SHARECODES: ${{ secrets.DDFACTORY_SHARECODES }}
-          FACTORAY_WANTPRODUCT_NAME: ${{ secrets.FACTORAY_WANTPRODUCT_NAME }}
+          JDJOY_HELPSELF: ${{ secrets.JDJOY_HELPSELF }} #疯狂的joy循环助力，true表示循环助力,false表示不循环助力，默认不开启循环助力。
+          JDJOY_APPLYJDBEAN: ${{ secrets.JDJOY_APPLYJDBEAN }} #疯狂的joy京豆兑换，目前最小值为500/1000京豆，默认不开启京豆兑换。
