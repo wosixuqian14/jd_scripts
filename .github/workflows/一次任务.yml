@@ -8,7 +8,7 @@ on:
         branches:
             - master
     schedule:
-            - cron: '11 23 1 * 1'
+        - cron: '16 0 * * *'
 jobs:
     build:
         runs-on: ubuntu-latest
@@ -20,11 +20,9 @@ jobs:
               uses: actions/setup-node@v1
               with:
                 node-version: '12.x'
-            - name: Run app
+            - name: Run jd_get_share_code
               run: npm install
             - run: node jd_get_share_code.js
               env:
                 JD_COOKIE: ${{ secrets.JD_COOKIE }}
                 PUSH_KEY: ${{ secrets.PUSH_KEY }}
-                
-     
