@@ -183,7 +183,9 @@ if ($.isNode()) {
     count++
     console.log(`============开始第${count}次挂机=============`)
     for (let i = 0; i < cookiesArr.length; i++) {
+      console.log(`============开始循环=============`)
       if (cookiesArr[i]) {
+        console.log(`============开始判断=============`)
         cookie = cookiesArr[i];
         $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
         $.index = i + 1;
