@@ -1,5 +1,5 @@
 
-name: 赚京豆
+name: jd_syj
 
 on:
   workflow_dispatch:
