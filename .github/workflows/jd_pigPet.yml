@@ -1,4 +1,4 @@
-name: 京东金融养猪猪
+name: jd_pigPet
 
 on:
   workflow_dispatch:
